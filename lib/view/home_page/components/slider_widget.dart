@@ -22,11 +22,12 @@ class _HomeSliderWidgetState extends State<HomeSliderWidget> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.all(5),
+      // padding: EdgeInsets.all(5),
       child: GetX<HomeSliderBannerController>(
         builder: (controller) {
           return Container(
             height: 100,
+            width: MediaQuery.of(context).size.width,
             child: ListView.builder(
               scrollDirection: Axis.horizontal,
               itemCount: controller.homeSliderBanner.length,
@@ -41,6 +42,20 @@ class _HomeSliderWidgetState extends State<HomeSliderWidget> {
                 );
               },
             ),
+            // child: SliverList(
+            //   delegate: SliverChildBuilderDelegate(
+            //     (BuildContext context, int index) {
+            //       return Card(
+            //         elevation: 4.0,
+            //         child: Image.network(
+            //           controller.homeSliderBanner[index].imgUrl,
+            //           width: MediaQuery.of(context).size.width - 15,
+            //           fit: BoxFit.cover,
+            //         ),
+            //       );
+            //     },
+            //   ),
+            // ),
           );
         },
       ),

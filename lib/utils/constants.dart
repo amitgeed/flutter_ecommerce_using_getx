@@ -27,3 +27,10 @@ TextStyle kDealTitle() {
     color: Colors.deepPurple,
   );
 }
+
+
+Color kPrimaryColor = Colors.deepPurpleAccent;
+Color kLatestProductsColor = Colors.deepOrangeAccent;
+Color kTopProductsColor = Colors.blue;
+Color kSponseredProductsColor = Colors.deepPurple;
+Color kExclusiveProductsColor = Colors.redAccent;

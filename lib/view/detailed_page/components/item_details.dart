@@ -3,7 +3,6 @@ import 'package:flutter_ecommerece_using_getx/controller/shopping_controller.dar
 import 'package:flutter_ecommerece_using_getx/utils/constants.dart';
 import 'package:get/get.dart';
 
-
 class ItemDetails extends StatelessWidget {
   const ItemDetails({
     Key key,
@@ -19,7 +18,12 @@ class ItemDetails extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Image.network(controller.items[itemIndex].imgUrl),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Expanded(child: Image.network(controller.items[itemIndex].imgUrl)),
+              ],
+            ),
             Container(
               padding: const EdgeInsets.symmetric(
                 vertical: 5,

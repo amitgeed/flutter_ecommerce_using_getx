@@ -1,6 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_ecommerece_using_getx/utils/constants.dart';
+import 'package:flutter_ecommerece_using_getx/view/home_page/components/categories_slider.dart';
+import 'package:flutter_ecommerece_using_getx/view/home_page/components/exclusive_deals.dart';
+import 'package:flutter_ecommerece_using_getx/view/home_page/components/latest_products.dart';
+import 'package:flutter_ecommerece_using_getx/view/home_page/components/slider_widget.dart';
+import 'package:flutter_ecommerece_using_getx/view/home_page/components/sponsered_products.dart';
+import 'package:flutter_ecommerece_using_getx/view/home_page/components/top_products.dart';
 
-import 'components/item_widget.dart';
+import 'components/gird_top_bar.dart';
+import 'components/more_products-button.dart';
 
 class HomePage extends StatelessWidget {
   @override
@@ -20,10 +28,46 @@ class HomePage extends StatelessWidget {
           ),
         ],
       ),
-      body: Column(
-        children: [
-          ItemWidget(),
-        ],
+      body: Container(
+        child: CustomScrollView(
+          slivers: <Widget>[
+            SliverList(
+              delegate: SliverChildListDelegate(
+                [
+                  HomeSliderWidget(),
+                ],
+              ),
+            ),
+            SliverList(
+              delegate: SliverChildListDelegate(
+                [
+                  Categoriesslider(),
+                ],
+              ),
+            ),
+            GridTopBarWidget(
+              color: kLatestProductsColor,
+              title: 'Latest Products',
+            ),
+            LatestProducts(),
+            GridTopBarWidget(
+              color: kTopProductsColor,
+              title: 'Top Products',
+            ),
+            TopProducts(),
+            GridTopBarWidget(
+              color: kSponseredProductsColor,
+              title: 'Sponsered',
+            ),
+            SponseredProducts(),
+            GridTopBarWidget(
+              color: kExclusiveProductsColor,
+              title: 'Exclusive Deals',
+            ),
+            ExclusiveDeals(),
+            MoreProductsButton(),
+          ],
+        ),
       ),
     );
   }
