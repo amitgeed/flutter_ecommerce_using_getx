@@ -14,20 +14,22 @@ class SponseredProducts extends StatelessWidget {
       delegate: SliverChildListDelegate(
         [
           ProductWidget(
-            image:shoppingController.sponseredProducts[2].imgUrl,
+            image: shoppingController.sponseredProducts[1].imgUrl,
             name: shoppingController.sponseredProducts[1].name,
             desc: shoppingController.sponseredProducts[1].description,
             price: '${shoppingController.sponseredProducts[1].price}',
             marginLeft: true,
             borderColor: kSponseredProductsColor,
+            productIndex: shoppingController.sponseredProductsIndex[1],
           ),
           ProductWidget(
-            image:shoppingController.sponseredProducts[2].imgUrl,
+            image: shoppingController.sponseredProducts[2].imgUrl,
             name: shoppingController.sponseredProducts[2].name,
             desc: shoppingController.sponseredProducts[2].description,
             price: '${shoppingController.sponseredProducts[2].price}',
             marginLeft: false,
             borderColor: kSponseredProductsColor,
+            productIndex: shoppingController.sponseredProductsIndex[2],
           ),
           ProductWidget(
             image: shoppingController.sponseredProducts[3].imgUrl,
@@ -36,6 +38,7 @@ class SponseredProducts extends StatelessWidget {
             price: '${shoppingController.sponseredProducts[3].price}',
             marginLeft: true,
             borderColor: kSponseredProductsColor,
+            productIndex: shoppingController.sponseredProductsIndex[3],
           ),
           ProductWidget(
             image: shoppingController.sponseredProducts[4].imgUrl,
@@ -44,6 +47,7 @@ class SponseredProducts extends StatelessWidget {
             price: '${shoppingController.sponseredProducts[4].price}',
             marginLeft: false,
             borderColor: kSponseredProductsColor,
+            productIndex: shoppingController.sponseredProductsIndex[4],
           ),
         ],
       ),

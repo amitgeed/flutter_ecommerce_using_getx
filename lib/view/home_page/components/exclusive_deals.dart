@@ -21,6 +21,7 @@ class ExclusiveDeals extends StatelessWidget {
             price: '${shoppingController.exclusiveProducts[1].price}',
             marginLeft: true,
             borderColor: kExclusiveProductsColor,
+            productIndex: shoppingController.exclusiveProductsIndex[1],
           ),
           ProductWidget(
             image: shoppingController.exclusiveProducts[2].imgUrl,
@@ -29,6 +30,7 @@ class ExclusiveDeals extends StatelessWidget {
             price: '${shoppingController.exclusiveProducts[2].price}',
             marginLeft: false,
             borderColor: kExclusiveProductsColor,
+            productIndex: shoppingController.exclusiveProductsIndex[2],
           ),
           ProductWidget(
             image: shoppingController.exclusiveProducts[3].imgUrl,
@@ -37,6 +39,7 @@ class ExclusiveDeals extends StatelessWidget {
             price: '${shoppingController.exclusiveProducts[3].price}',
             marginLeft: true,
             borderColor: kExclusiveProductsColor,
+            productIndex: shoppingController.exclusiveProductsIndex[3],
           ),
           ProductWidget(
             image: shoppingController.exclusiveProducts[4].imgUrl,
@@ -45,6 +48,7 @@ class ExclusiveDeals extends StatelessWidget {
             price: '${shoppingController.exclusiveProducts[4].price}',
             marginLeft: false,
             borderColor: kExclusiveProductsColor,
+            productIndex: shoppingController.exclusiveProductsIndex[4],
           ),
         ],
       ),

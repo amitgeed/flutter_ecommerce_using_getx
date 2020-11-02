@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_ecommerece_using_getx/utils/constants.dart';
+import 'package:flutter_ecommerece_using_getx/view/categories_page/categoriesed_items.dart';
+import 'package:get/get.dart';
 
 class Categoriesslider extends StatelessWidget {
   @override
@@ -11,33 +13,57 @@ class Categoriesslider extends StatelessWidget {
         children: [
           CategoriesWidget(
             icon: Icons.mobile_friendly,
-            title: 'Mobile & Tablets',
-            onTapped: () {},
+            title: 'Mobiles & Tablets',
+            onTapped: () {
+              Get.to(CategorisedItems(
+                category: 'Mobiles & Tablets',
+              ));
+            },
           ),
           CategoriesWidget(
             icon: Icons.laptop,
             title: 'Computers & Laptops',
-            onTapped: () {},
+            onTapped: () {
+              Get.to(CategorisedItems(
+                category: 'Computers & Laptops',
+              ));
+            },
           ),
           CategoriesWidget(
             icon: Icons.electrical_services,
             title: 'Electronics Accessories',
-            onTapped: () {},
+            onTapped: () {
+              Get.to(CategorisedItems(
+                category: 'Electronics Accessories',
+              ));
+            },
           ),
           CategoriesWidget(
             icon: Icons.tv,
-            title: 'Tv & Appliances',
-            onTapped: () {},
+            title: 'TV & Appliances',
+            onTapped: () {
+              Get.to(CategorisedItems(
+                category: 'TV & Appliances',
+              ));
+            },
           ),
           CategoriesWidget(
             icon: Icons.shopping_bag,
             title: 'Fashion',
-            onTapped: () {},
+            onTapped: () {
+              Get.to(CategorisedItems(
+                category: 'Fashion',
+              ));
+            },
           ),
           CategoriesWidget(
             icon: Icons.disc_full_outlined,
-            title: 'Others',
-            onTapped: () {},
+            title: 'Other',
+            onTapped: () {
+              Get.to(CategorisedItems(
+                category: 'Other',
+              ));
+            },
           ),
         ],
       ),

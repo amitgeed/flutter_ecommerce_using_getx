@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_ecommerece_using_getx/controller/shopping_controller.dart';
+import 'package:flutter_ecommerece_using_getx/controller/wishlist_controller.dart';
 import 'package:flutter_ecommerece_using_getx/view/detailed_page/components/item_details.dart';
 import 'package:get/get.dart';
 import 'components/bottom_buttons.dart';
@@ -14,11 +15,12 @@ class Detailedpage extends StatelessWidget {
   final int itemIndex;
   Detailedpage({this.itemIndex});
   final ShoppingController shoppingController = Get.put(ShoppingController());
+  final WishlistController wishlistController = Get.put(WishlistController());
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: SingleChildScrollView(
+    return Scaffold(body: Builder(builder: (BuildContext context) {
+      return SingleChildScrollView(
         child: Container(
           padding: EdgeInsets.all(10),
           child: Column(
@@ -42,7 +44,13 @@ class Detailedpage extends StatelessWidget {
                       ),
                     ),
                     FlatButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        wishlistController
+                            .addItem(shoppingController.items[itemIndex]);
+                        Scaffold.of(context).showSnackBar(SnackBar(
+                          content: Text('Added to wishlist'),
+                        ));
+                      },
                       child: Row(
                         children: [
                           Icon(Icons.favorite_border_outlined),
@@ -58,11 +66,11 @@ class Detailedpage extends StatelessWidget {
               RateProduct(),
               DetailedDescription(itemIndex: itemIndex),
               ReviewWidget(),
-              BottomBottons(),
+              BottomBottons(itemIndex: itemIndex),
             ],
           ),
         ),
-      ),
-    );
+      );
+    }));
   }
 }

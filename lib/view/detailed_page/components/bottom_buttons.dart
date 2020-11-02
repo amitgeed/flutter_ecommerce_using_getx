@@ -1,10 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_ecommerece_using_getx/controller/cart_controller.dart';
+import 'package:flutter_ecommerece_using_getx/controller/shopping_controller.dart';
+import 'package:get/get.dart';
 
 class BottomBottons extends StatelessWidget {
-  const BottomBottons({
-    Key key,
-  }) : super(key: key);
+  final int itemIndex;
+  BottomBottons({this.itemIndex});
 
+  final CartController cartController = Get.put(CartController());
+  final ShoppingController shoppingController = Get.put(ShoppingController());
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -41,7 +45,11 @@ class BottomBottons extends StatelessWidget {
               padding: EdgeInsets.symmetric(
                 vertical: 20,
               ),
-              onPressed: () {},
+              onPressed: () {
+                cartController.addItem(shoppingController.items[itemIndex]);
+                Scaffold.of(context)
+                    .showSnackBar(SnackBar(content: Text('Added to cart')));
+              },
               color: Colors.blue,
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,

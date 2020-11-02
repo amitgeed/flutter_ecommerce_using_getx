@@ -30,6 +30,8 @@ dependencies:
   cupertino_icons: ^1.0.0
   get: ^3.12.1
   flutter_rating_bar: ^3.0.1+1
+  loading: ^1.0.2
+  device_preview: ^0.4.8
 
 dev_dependencies:
   flutter_test:

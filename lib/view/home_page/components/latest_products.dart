@@ -21,6 +21,7 @@ class LatestProducts extends StatelessWidget {
             price: '${shoppingController.latestProducts[1].price}',
             marginLeft: true,
             borderColor: kLatestProductsColor,
+            productIndex: shoppingController.latestProductsIndex[1],
           ),
           ProductWidget(
             image: shoppingController.latestProducts[2].imgUrl,
@@ -29,6 +30,7 @@ class LatestProducts extends StatelessWidget {
             price: '${shoppingController.latestProducts[2].price}',
             marginLeft: false,
             borderColor: kLatestProductsColor,
+            productIndex: shoppingController.latestProductsIndex[2],
           ),
           ProductWidget(
             image: shoppingController.latestProducts[3].imgUrl,
@@ -37,6 +39,7 @@ class LatestProducts extends StatelessWidget {
             price: '${shoppingController.latestProducts[3].price}',
             marginLeft: true,
             borderColor: kLatestProductsColor,
+            productIndex: shoppingController.latestProductsIndex[3],
           ),
           ProductWidget(
             image: shoppingController.latestProducts[4].imgUrl,
@@ -45,10 +48,10 @@ class LatestProducts extends StatelessWidget {
             price: '${shoppingController.latestProducts[4].price}',
             marginLeft: false,
             borderColor: kLatestProductsColor,
+            productIndex: shoppingController.latestProductsIndex[4],
           ),
         ],
       ),
     );
   }
 }
-

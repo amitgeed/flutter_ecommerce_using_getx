@@ -36,7 +36,7 @@ class _HomeSliderWidgetState extends State<HomeSliderWidget> {
                   elevation: 4.0,
                   child: Image.network(
                     controller.homeSliderBanner[index].imgUrl,
-                    width: MediaQuery.of(context).size.width - 15,
+                    width: MediaQuery.of(context).size.width - 10,
                     fit: BoxFit.cover,
                   ),
                 );

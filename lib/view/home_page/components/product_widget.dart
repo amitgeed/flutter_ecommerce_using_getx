@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_ecommerece_using_getx/utils/constants.dart';
 import 'package:flutter_ecommerece_using_getx/view/detailed_page/detailed_page.dart';
+import 'package:get/get.dart';
 
 class ProductWidget extends StatelessWidget {
   final String image;
@@ -9,6 +10,7 @@ class ProductWidget extends StatelessWidget {
   final String price;
   final bool marginLeft;
   final borderColor;
+  final int productIndex;
   ProductWidget({
     this.desc,
     this.image,
@@ -16,20 +18,16 @@ class ProductWidget extends StatelessWidget {
     this.price,
     this.marginLeft,
     this.borderColor,
+    this.productIndex,
   });
 
   @override
   Widget build(BuildContext context) {
     return InkWell(
       onTap: () {
-        Navigator.push(
-          context,
-          MaterialPageRoute(
-            builder: (context) => Detailedpage(
-              // itemIndex: ,
-            ),
-          ),
-        );
+        Get.to(Detailedpage(
+          itemIndex: productIndex,
+        ));
       },
       child: Container(
         margin:
@@ -42,10 +40,14 @@ class ProductWidget extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
             Expanded(child: Image.network(image)),
-            Text(name),
+            Text(
+              name,
+              textAlign: TextAlign.center,
+            ),
             Text(
               desc,
               textAlign: TextAlign.center,
+              maxLines: 2,
               style: kItemDescription(),
             ),
             Text(price, style: kItemPrice()),

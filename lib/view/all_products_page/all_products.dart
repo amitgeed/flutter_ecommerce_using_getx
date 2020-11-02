@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_ecommerece_using_getx/view/home_page/components/item_widget.dart';
+import 'package:flutter_ecommerece_using_getx/view/all_products_page/components/item_widget.dart';
 
 class AllProducts extends StatelessWidget {
   @override
